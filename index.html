@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuantumShield AI | Post-Quantum Migration Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">Q<span>·</span></div><div><b>QUANTUM<span>SHIELD</span></b><small>RESEARCH CONSOLE</small></div></div>
+    <div class="side-label">WORKSPACE</div>
+    <button class="nav active" data-page="overview"><i>◈</i> Overview</button>
+    <button class="nav" data-page="analyzer"><i>⌁</i> Code analyzer</button>
+    <button class="nav" data-page="assistant"><i>✳</i> Migration assistant</button>
+    <button class="nav" data-page="dataset"><i>▦</i> Dataset lab</button>
+    <button class="nav" data-page="models"><i>⌗</i> Model benchmarks</button>
+    <button class="nav" data-page="research"><i>◉</i> Research notes</button>
+    <div class="sidebar-bottom"><div class="status-dot"></div><span>LOCAL RESEARCH MODE</span><small>v1.0.0 · EXPERIMENTAL</small></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">POST-QUANTUM CRYPTOGRAPHY</span><h1 id="page-title">Research overview</h1></div><div class="top-right"><span class="live"><i></i> SYSTEM ONLINE</span><div class="avatar">QS</div></div></header>
+
+    <section class="page active" id="overview">
+      <div class="hero">
+        <div class="hero-copy"><div class="pill"><span></span> CRYPTOGRAPHIC AGILITY INITIATIVE</div>
+          <h2>Prepare your systems<br>for the <em>quantum era.</em></h2>
+          <p>An evidence-led workspace for identifying cryptographic components, exploring migration paths, and evaluating machine-learning research experiments.</p>
+          <button class="primary" data-go="analyzer">Launch code analyzer <b>↗</b></button>
+        </div>
+        <div class="orb-wrap"><div class="orb"><div class="orb-core">Q</div><span class="orbit o1"></span><span class="orbit o2"></span><span class="orbit o3"></span></div><div class="orb-caption">CRYPTOGRAPHIC<br>AGILITY / 001</div></div>
+      </div>
+      <div class="section-head"><div><span class="eyebrow">WORKSPACE SNAPSHOT</span><h3>Research at a glance</h3></div><span class="subtle">Live local application status</span></div>
+      <div class="stat-grid">
+        <article class="stat"><div class="stat-label">DATASET RECORDS <span>▦</span></div><strong id="stat-records">—</strong><small>Load your final JSON dataset</small></article>
+        <article class="stat"><div class="stat-label">CANDIDATE RECORDS <span>◈</span></div><strong id="stat-candidates">—</strong><small>Eligible for task classification</small></article>
+        <article class="stat"><div class="stat-label">MODEL EXPERIMENTS <span>⌗</span></div><strong id="stat-models">03</strong><small>Baseline + two classical ML models</small></article>
+        <article class="stat"><div class="stat-label">SECURITY APPROVAL <span>◇</span></div><strong class="text-amber">HUMAN</strong><small>Required before any migration</small></article>
+      </div>
+      <div class="two-col">
+        <article class="panel"><div class="panel-head"><div><span class="eyebrow">PIPELINE</span><h3>Migration workflow</h3></div><span class="tag">EVIDENCE FIRST</span></div>
+          <div class="pipeline">
+            <div class="pipe-step"><b>01</b><div><strong>Inventory</strong><small>Identify algorithms, libraries and use cases</small></div><span>→</span></div>
+            <div class="pipe-step"><b>02</b><div><strong>Risk analysis</strong><small>Separate public-key exposure from symmetric/hash considerations</small></div><span>→</span></div>
+            <div class="pipe-step"><b>03</b><div><strong>Recommendation</strong><small>Match migration options to cryptographic purpose</small></div><span>→</span></div>
+            <div class="pipe-step"><b>04</b><div><strong>Validate & review</strong><small>Tests, interoperability, performance and human approval</small></div><span>✓</span></div>
+          </div>
+        </article>
+        <article class="panel"><div class="panel-head"><div><span class="eyebrow">RESEARCH GUARDRAILS</span><h3>Integrity status</h3></div><span class="tag amber">IMPORTANT</span></div>
+          <div class="guard"><span class="guard-icon">!</span><div><strong>No verified records</strong><p>Dataset metadata says records are not verified. Quarantined records are excluded from supervised training.</p></div></div>
+          <div class="guard"><span class="guard-icon">⌁</span><div><strong>Classification ≠ security proof</strong><p>Models classify candidate task types; they do not validate cryptographic correctness.</p></div></div>
+          <div class="guard"><span class="guard-icon">✓</span><div><strong>Human approval required</strong><p>No automatic deployment or claim of secure migration is made.</p></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="analyzer">
+      <div class="page-intro"><span class="eyebrow">STATIC INDICATOR SCREENING</span><h2>Cryptographic code analyzer</h2><p>Scan a code excerpt for configured algorithm-name indicators from the research notebook. This is a preliminary pattern check, not a full parser.</p></div>
+      <div class="panel">
+        <label>CODE / CONFIGURATION INPUT</label><textarea id="code-input" spellcheck="false" placeholder="# Paste a code excerpt or cryptographic configuration&#10;from cryptography.hazmat.primitives.asymmetric import rsa&#10;private_key = rsa.generate_private_key(...)"></textarea>
+        <label>OPTIONAL CONTEXT</label><input id="code-context" placeholder="e.g. TLS service, Python cryptography library, version 42.0">
+        <div class="action-row"><span class="subtle">Your input is processed by this local Flask application.</span><button class="primary" id="analyze-btn">Run indicator scan ↗</button></div>
+      </div>
+      <div id="analysis-result" class="result-area"></div>
+    </section>
+
+    <section class="page" id="assistant">
+      <div class="page-intro"><span class="eyebrow">LLM + EVIDENCE + HUMAN REVIEW</span><h2>Migration assistant</h2><p>Structure a migration review. Configure an LLM API key on the server to enable model-backed responses; otherwise, local research guidance is provided.</p></div>
+      <div class="assistant-layout">
+        <div class="panel chat-panel"><div class="chat-head"><div class="ai-icon">✳</div><div><strong>QuantumShield copilot</strong><small><span class="status-dot"></span> Research guidance · review required</small></div></div>
+          <div id="chat-log" class="chat-log"><div class="bubble bot">Welcome. Share a code excerpt or describe your cryptographic system. I will organize the review around observed evidence, inferred risk, migration options, validation, and uncertainty. I will not claim that a migration is secure without independent review.</div></div>
+          <div class="chat-compose"><textarea id="assistant-input" rows="2" placeholder="Describe your cryptographic system or ask a migration question..."></textarea><button class="primary" id="ask-btn">Send ↗</button></div>
+        </div>
+        <aside class="panel checklist"><span class="eyebrow">REVIEW FRAMEWORK</span><h3>Required review areas</h3><ol><li>Cryptographic inventory</li><li>Quantum exposure</li><li>Migration options</li><li>Compatibility risks</li><li>Evidence from standards/docs</li><li>Validation & rollback</li><li>Human approval</li></ol><div class="mini-warning">Never treat generated code or an algorithm label as proof of security.</div></aside>
+      </div>
+    </section>
+
+    <section class="page" id="dataset">
+      <div class="page-intro"><span class="eyebrow">DATA QUALITY & EXPERIMENT INPUT</span><h2>Dataset lab</h2><p>Upload the final JSON dataset used by your Colab notebook. The app reads the <code>dataset_info</code> and <code>records</code> fields.</p></div>
+      <div class="panel upload-panel"><div class="upload-symbol">⇧</div><div><h3>Import research dataset</h3><p>Choose your final PQC dataset JSON file. It stays in the app's local data folder.</p><input type="file" id="dataset-file" accept=".json,application/json"></div><button class="primary" id="upload-btn">Upload & audit ↗</button></div>
+      <div id="dataset-result" class="result-area"></div>
+      <div class="panel note-panel"><b>Notebook rule:</b> supervised experiments use only records with <code>verification_status == "candidate"</code> and task types <code>classical_hardening</code> / <code>non_pqc_maintenance</code>. Quarantined records are never used as correct target answers.</div>
+    </section>
+
+    <section class="page" id="models">
+      <div class="page-intro"><span class="eyebrow">CANDIDATE-ONLY TASK CLASSIFICATION</span><h2>Model benchmarks</h2><p>Run the classical baselines on your uploaded dataset and inspect the metrics generated by the actual experiment.</p></div>
+      <div class="benchmark-actions"><div><span class="eyebrow">EXPERIMENT CONFIGURATION</span><strong>Provided train / test split · seed 42</strong><small>Candidate records only · two task classes</small></div><button class="primary" id="train-btn">Train & compare models ↗</button></div>
+      <div id="model-result" class="result-area"></div>
+      <div class="panel"><div class="panel-head"><div><span class="eyebrow">METRIC GUIDE</span><h3>How to read the results</h3></div></div><div class="metric-grid"><div><b>Accuracy</b><small>Overall fraction of correct predictions.</small></div><div><b>Balanced accuracy</b><small>Average recall across classes.</small></div><div><b>Macro-F1</b><small>Unweighted average F1 across classes.</small></div><div><b>MCC</b><small>Correlation between true and predicted labels.</small></div></div><p class="subtle footnote">These metrics evaluate task-type classification only. They do not measure cryptographic security or PQC migration correctness.</p></div>
+    </section>
+
+    <section class="page" id="research">
+      <div class="page-intro"><span class="eyebrow">PROJECT DOCUMENTATION</span><h2>Research notes</h2><p>Research framing and limitations carried forward from the supplied notebook.</p></div>
+      <div class="research-grid">
+        <article class="panel"><span class="eyebrow">01 / OBJECTIVE</span><h3>LLM-assisted migration planning</h3><p>Use an LLM as a reasoning and report-generation component, supported by evidence retrieval, transparent checks, testing, and human approval—not as a sole security oracle.</p></article>
+        <article class="panel"><span class="eyebrow">02 / CLASSICAL BASELINES</span><h3>Text classification</h3><p>Compare a majority baseline, TF-IDF + Logistic Regression, and TF-IDF + Linear SVM on candidate-only task-type labels.</p></article>
+        <article class="panel"><span class="eyebrow">03 / OPTIONAL MODEL</span><h3>DistilBERT</h3><p>The notebook includes an optional fine-tuned transformer experiment. Report its metrics only if that cell completes; this web app does not fabricate or infer transformer scores.</p></article>
+        <article class="panel"><span class="eyebrow">04 / VALIDATION</span><h3>Independent verification</h3><p>Build an independently reviewed test suite from primary standards and current library documentation. Add static checks, unit/integration tests, interoperability tests, performance tests, expert review and rollback planning.</p></article>
+      </div>
+      <div class="panel distinction"><h3>Algorithm roles matter</h3><div class="role-row"><div><b>ML-KEM</b><small>Key establishment</small></div><div><b>ML-DSA</b><small>Digital signatures</small></div><div><b>SLH-DSA</b><small>Digital signatures</small></div></div><p class="subtle">Key-establishment mechanisms and signature schemes are different cryptographic functions and must not be treated as interchangeable.</p></div>
+      <div class="panel"><span class="eyebrow">RESEARCH LIMITATIONS</span><ul class="limitations"><li>Dataset metadata reports no verified records.</li><li>Quarantined PQC migration records are excluded from supervised target labels.</li><li>Candidate labels cover only classical hardening and non-PQC maintenance in this experiment.</li><li>Classification performance is not evidence of cryptographic correctness.</li><li>Pattern indicators are not a substitute for a cryptographic parser, static analysis, or expert review.</li><li>No automatic deployment is supported.</li></ul></div>
+    </section>
+    <footer>QUANTUMSHIELD AI <span>RESEARCH PROTOTYPE · NOT A SECURITY CERTIFICATION</span></footer>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
